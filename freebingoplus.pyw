@@ -43,13 +43,14 @@ def gen():
         n = 1; # "ID" of cell
         for row in table.rows: # Read all rows
             for cell in row.cells: # Read all cells
-                if cell.text == '' and n != 18: # Check for letters and "ID"
+                if cell.text == '' and n != 23: # Check for letters and "ID"
                     cell.text = f'\n{randint(0, 100)}'; # Paste random number
                     paragraphs = cell.paragraphs; # Get paragraphs
                     for paragraph in paragraphs: # Read all paragraphs
                         for run in paragraph.runs: # Read all runs
                             font = run.font; # Get font
                             font.name = 'Arial'; # Change style of font
+                            run.font.bold = True; # Make font bold
                         paragraph.alignment = 1; # Center parapraph
                 n += 1; # Next "ID"
 
@@ -124,7 +125,7 @@ try:
     Label(f2, text = 'FreeBingo+', font = ('Segoe UI',
         10, 'bold')).place(x = 110, y = 30);
     
-    Label(f2, text = 'Version 1.0 (2021)').place(x = 110, y = 50);
+    Label(f2, text = 'Version 1.1 (2021)').place(x = 110, y = 50);
     Label(f2, text = 'Author: Fedor Egorov (FatlessComb1168)').place(
         x = 110, y = 67);
 
